@@ -29,7 +29,7 @@ while name!= 'done':
 print('Data entry complete. ' + str(len(names)) + ' students entered.')
 
 
-# Part 2 
+# Part 2 Calculations
 
 total = 0 
 highest = scores[0]
@@ -49,3 +49,28 @@ print('Total students : ' + str(len(names)))
 print('Class average  : ' + str(round(average, 1)))
 print('Highest score  : ' + str(highest))
 print('Lowest score   : ' + str(lowest))
+
+# Part 3 Full Report
+
+print('')
+print('=== Full Grade Report ===')
+print(f"{'Name':>20} {'Score':<8} {'Grade':<6}")
+print('-' * 36)
+
+# for loop directly over the name slist 
+for i in range(len(names)):
+    score = scores[i]
+
+    # if/elif/else to assign letter grade
+    if score >= 90:
+        letter = 'A'
+    elif score >= 80:
+        letter = 'B'
+    elif score >= 70:
+        letter = 'C'
+    elif score >= 60:
+        letter = 'D'
+    else:
+        letter = 'F'
+
+print(f"{names[i]:<20} {score:<8} {letter:<6}")
